@@ -16,17 +16,7 @@
             </div>
         </div>
     </header>
-    <nav>
-        <ul class="menu">
-            <li><a class="active-link-menu" href="#">Home</a></li>
-            <li><a href="#">Man</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Kids</a></li>
-            <li><a href="#">Accoseriese</a></li>
-            <li><a href="#">Featured</a></li>
-            <li><a href="#">Hot Deals </a></li>
-        </ul>
-    </nav>
+    <nav id="menu"></nav>
     <div class="slider">
         <div class="content content__slider">
             <div class="slide fade">
@@ -63,9 +53,6 @@
             $i = 1;
             foreach ($products as $product){
                 echo '<a href="../product/card?id='.$product->id_product.'" class="gallery-item">
-                        <div class="gallery-item--hover">
-                            <div class="addtocart">Add to Cart</div>
-                        </div>
                         <img src="'.$product->product_img.'" alt="goods">
                         <p class="good-title">'.$product->product_name.'</p>
                         <p class="good-price">$'.$product->product_price.'</p>
@@ -76,7 +63,7 @@
             ?>
         </div>
         <div class="content">
-            <a class="linkToCatalog" href="#">
+            <a class="linkToCatalog" href="catalog/catalog">
                 Browse All Product&nbsp;<i class="icon-right"></i>
             </a>
         </div>

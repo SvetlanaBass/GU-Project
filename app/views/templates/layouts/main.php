@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="pakages/fontello/css/fontello.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/menu.js"></script>
 </head>
 <body>
     <?=$content?>

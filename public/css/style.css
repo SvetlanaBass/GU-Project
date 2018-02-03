@@ -43,7 +43,7 @@
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 .content {
     min-width: 800px;
@@ -270,36 +270,8 @@ nav > ul {
     line-height: 0.7;
     letter-spacing: 0.5px;
 }
-.gallery-item--hover {
-    width: 263px;
-    height: 281px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(58, 56, 56, 0.83);
-    visibility: hidden;
-}
 .gallery-item:hover {
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.16);
-}
-.gallery-item:hover .gallery-item--hover {
-    visibility: visible;
-}
-.addtocart {
-    width: 91px;
-    height: 25px;
-    font-family: "Lato-Bold", sans-serif;
-    font-size: 13px;
-    color: #fff;
-    border: 1px solid #fff;
-    background: url("../img/cartWhite.svg") no-repeat 10% 50%;
-    background-size: 20%;
-    text-align: center;
-    padding-top: 12px;
-    padding-left: 30px;
-    position: absolute;
-    top: 99px;
-    left: 71px;
 }
 .good-price {
     color: #f16d7f;
