@@ -2,14 +2,15 @@
 <a class="btn" href="../cart/cart?id=<?=$product->id_product?>">Корзина</a>
 <a class="btn" href="../save/save">Добавить или обновить продукт</a>
 <h1>Каталог</h1>
-<div class="container-gallery">
+<div class="content feturedItems__gallery">
     <?php
-        foreach ($products as $product){
-            echo '<a href="../product/card?id='.$product->id_product.'" class="container-product">
-                    <p class="name">'.$product->product_name.'</p>
-                    <p class="price">Цена товара: '.$product->product_price.' $</p>
-                  </a>';
-        }
+    foreach ($products as $product){
+        echo '<a href="?product/card?id='.$product->id_product.'" class="gallery-item">
+                    <img src="'.$product->product_img.'" alt="goods">
+                    <p class="good-title">'.$product->product_name.'</p>
+                    <p class="good-price">$'.$product->product_price.'</p>
+              </a>';
+    }
     ?>
 </div>
 

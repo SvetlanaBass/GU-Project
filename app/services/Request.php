@@ -14,6 +14,7 @@ class Request
     {
         $this->requestString = $_SERVER['REQUEST_URI'];
         $this->parseRequest();
+
     }
 
     private function parseRequest()
@@ -28,12 +29,12 @@ class Request
 
     public function getControllerName()
     {
-        return $this->controllerName;
+        return $this->controllerName;   // null
     }
 
     public function getActionName()
     {
-        return $this->actionName;
+        return $this->actionName; // null
     }
 
     public function getParams()

@@ -52,7 +52,7 @@
             <?php
             $i = 1;
             foreach ($products as $product){
-                echo '<a href="../product/card?id='.$product->id_product.'" class="gallery-item">
+                echo '<a href="?product/card?id='.$product->id_product.'" class="gallery-item">
                         <img src="'.$product->product_img.'" alt="goods">
                         <p class="good-title">'.$product->product_name.'</p>
                         <p class="good-price">$'.$product->product_price.'</p>
@@ -63,7 +63,7 @@
             ?>
         </div>
         <div class="content">
-            <a class="linkToCatalog" href="catalog/catalog">
+            <a class="linkToCatalog" href="?catalog/catalog">
                 Browse All Product&nbsp;<i class="icon-right"></i>
             </a>
         </div>

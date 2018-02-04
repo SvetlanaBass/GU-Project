@@ -8,17 +8,17 @@ class FrontController extends Controller
 
     public function actionIndex()
     {
-        $request = App::call()->request;
-        $controllerName = $request->getControllerName() ?: $this->defaultController;
-        $actionName = $request->getActionName();
-
+        $request = App::call()->request; // несуществующее св-во. Создается объект new Request
+        $controllerName = $request->getControllerName() ?: $this->defaultController; //(null)'main'
+        $actionName = $request->getActionName(); // null
         $controllerClass = App::call()->config['controllers_namespaces'] . ucfirst($controllerName) . "Controller";
-
+        // $controllerClass = 'app\controllers\MainController'
         if (class_exists($controllerClass)) {
-            $controller = new $controllerClass(
+            $controller = new $controllerClass( // new MainController(new TemplateRenderer())
                 new \app\services\renderers\TemplateRenderer()
             );
-            $controller->runAction($actionName);
+            $controller->runAction($actionName); // new MainController->runAction(null)
+                                                // runAction(null) - метод родителя (Controller.php)
         }
     }
 }
