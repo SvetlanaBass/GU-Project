@@ -83,7 +83,7 @@ abstract class Repository
         static::getDb()->execute($sql, $params);
     }
 
-    public function save (DataEntity $entity)
+    public function save(DataEntity $entity)
     {
         if ($entity->id_product == ''){
             $this->insert($entity);
@@ -111,6 +111,11 @@ abstract class Repository
         $sql = static::getDb()->queryAll($sql); // массив, содержащий название столбца primary key
         $primaryKey = $sql[0]['Column_name'];
         return $primaryKey;
+    }
+
+    public function saveNewUser(DataEntity $entity)
+    {
+        $this->insert($entity);
     }
 
     abstract static public function getTableName();

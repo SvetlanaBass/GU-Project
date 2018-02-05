@@ -20,5 +20,6 @@
         </div>
     </footer>
     <script src="js/slider.js"></script>
+    <script src="js/validateRegisterForm.js"></script>
 </body>
 </html>

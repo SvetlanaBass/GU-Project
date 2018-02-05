@@ -30,7 +30,7 @@ class SaveController extends Controller
                 $entity->product_price = $price;
             }
 
-            $entity->saveProduct($entity);
+            $entity->saveProduct($entity);  // переход в app\models\DataEntity.php
             echo $this->render("success", []);
 
         } else {
