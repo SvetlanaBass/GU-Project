@@ -20,6 +20,6 @@ class SaveNewUserController extends Controller
         $entity->password = $password;
 
         $entity->saveUser($entity);  // переход в app\models\DataEntity.php
-        echo $this->render("success", []);
+        echo $this->render("successUserRegistration", []);
     }
 }

@@ -12,7 +12,7 @@
             <div class="content__right">
                 <a class="cart" href="#"></a>
                 <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
-                <a class="btn" href="#">Login</a>
+                <a class="btn" href="?login/RenderLoginPage">Login</a>
             </div>
         </div>
     </header>

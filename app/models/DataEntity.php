@@ -34,4 +34,9 @@ abstract class DataEntity
         $saveEntity = new UserRepository();
         $saveEntity->saveNewUser($entity);
     }
+
+    public function getUser($entity){
+        $getEntity = new UserRepository();  // переход в app\models\repositories\Repository.php
+        $getEntity->getOneUser($entity);
+    }
 }

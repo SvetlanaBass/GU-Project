@@ -31,7 +31,7 @@
     src: url("../fonts/Lato-LightItalic.ttf") format("truetype");
 }
 .container {
-    min-height: calc(100vh - 126px);
+    min-height: calc(100vh - 76px);
 }
 
 /* HEADER */
@@ -638,19 +638,34 @@ input[type="submit"]:hover,
 input[type="reset"]:hover {
     background-color: #394e59;
 }
-.errorMessage{
+.errorMessage {
     color: red;
     margin-top: 5px;
     margin-bottom: 15px;
     padding-top: 0;
 }
-.form-note{
+.form-note {
     color: #adadad;
     font-size: 14px;
     line-height: 24px;
     text-align: right;
     margin: 12px 0 6px 22px;
     display: block;
+}
+/* Successful registration */
+.success {
+    font-family: "Lato-Bold", sans-serif;
+    font-size: 21px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: forestgreen;
+    margin: 50px auto;
+}
+.btn__one {
+    display: block;
+    width: 60px;
+    margin: 0 auto;
 }
 /* REGISTER PAGE END */
 

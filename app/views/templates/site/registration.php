@@ -15,7 +15,7 @@
         </div>
     </header>
     <div class="contacts-form-wrapper">
-        <form name="contacts" action="?saveNewUser/execute" onsubmit="return validate()" onreset="return clearForm()" method="post">
+        <form name="register" action="?saveNewUser/execute" onsubmit="return validate()" onreset="return clearForm()" method="post">
             <div><input type="text" name="username" size="50" id="userName"
                         placeholder="First name*" autofocus onfocus="return clearNameField()"></div>
             <div id="nameError" class="errorMessage"></div>
@@ -36,5 +36,4 @@
             <input type="reset" value="Reset">
         </form>
     </div>
-
 </div>

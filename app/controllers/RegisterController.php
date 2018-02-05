@@ -5,6 +5,6 @@ class RegisterController extends Controller
 {
     public function actionRenderRegisterPage()
     {
-        echo $this->render("registerPage", []);
+        echo $this->render("registration", []);
     }
 }

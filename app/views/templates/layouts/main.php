@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="pakages/fontello/css/fontello.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/menu.js"></script>
+    <script src="js/validateRegisterForm.js"></script>
 </head>
 <body>
     <?=$content?>
@@ -20,6 +21,5 @@
         </div>
     </footer>
     <script src="js/slider.js"></script>
-    <script src="js/validateRegisterForm.js"></script>
 </body>
 </html>

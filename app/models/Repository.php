@@ -118,6 +118,13 @@ abstract class Repository
         $this->insert($entity);
     }
 
+    public function getOneUser(DataEntity $entity)
+    {
+        $tableName = static::getTableName();
+        $sql = "SELECT * FROM {$tableName} WHERE login = :login";
+        return static::getDb()->queryObject($sql, [':login' => $entity->login], static::getEntityClass());
+    }
+
     abstract static public function getTableName();
 
     abstract static public function getEntityClass();
