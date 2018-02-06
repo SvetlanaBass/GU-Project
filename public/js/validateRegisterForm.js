@@ -3,8 +3,7 @@ function validate() {
     let fsurname=document.forms["register"]["usersurname"].value;
     let flogin=document.forms["register"]["login"].value;
     let fpassword=document.forms["register"]["password"].value;
-    let fpasswordConfirm = document.forms["register"]["passwordconfirm"].value; // !!!
-    //let checkLogin = "<?php echo $phpVar ?>";
+    let fpasswordConfirm = document.forms["register"]["passwordconfirm"].value;
 
     if (fname.length === 0) {
         document.getElementById("nameError").innerHTML="*Required field";
@@ -26,13 +25,7 @@ function validate() {
         document.getElementById("passwordConfirmError").innerHTML="*Required field";
         document.getElementById("userPasswordConfirm").style.borderColor = 'red';
         return false;
-    }
-    // else if (flogin === checkLogin){ // !!!
-    //     document.getElementById("loginError").innerHTML="*The selected login is already in use. Please select another one.";
-    //     document.getElementById("userLogin").style.borderColor = 'red';
-    //     return false;
-    // }
-    else if (fpassword !== fpasswordConfirm) {
+    } else if (fpassword !== fpasswordConfirm) {
         document.getElementById("passwordConfirmError").innerHTML="*Password confirmation does not match";
         document.getElementById("userPasswordConfirm").style.borderColor = 'red';
         return false;

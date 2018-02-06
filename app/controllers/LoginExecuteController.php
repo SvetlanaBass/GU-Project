@@ -17,28 +17,32 @@ class LoginExecuteController extends Controller
 
         // и проверяем соответствие логина и паролей пользователя и в базе данных
         if ($dbUser === false){
-            echo "Нет такого пользователя";
+            $errorNote = "Looks like either your email address or password were incorrect. Try again.";
+            echo $this->render("login", ['errorNote' => $errorNote]);
         } else if ($dbUser->password !== $password){
-            echo "Неправильный пароль";
+            $errorNote = "Looks like either your email address or password were incorrect. Try again.";
+            echo $this->render("login", ['errorNote' => $errorNote]);
         } else {
             $this->proceedLogin($dbUser->login, $dbUser->password);
-            echo $this->render("authorizationMain", []);
+            //header("Location: ".$_SERVER['HTTP_REFERER']);  //Автоматический возврат на предыдущую страницу.
+            header('Location: /');
+            //echo $this->render("main", []);
         }
     }
 
-    // описываем функцию proceedLogin($login, $dbPass)
-    /*
      function proceedLogin($login, $dbPass) {
         $_SESSION['login'] = $login;
 
-        if($_POST['rememberme'] == 'on'){
-            setcookie("site_hash", md5($dbPass), time() + 3600*24*7);
-            setcookie("site_login", $login, time() + 3600*24*7);
-        } else {
-            setcookie("site_hash", md5($dbPass));
-            setcookie("site_login", $login);
-        }
+         setcookie("site_hash", md5($dbPass), time() + 3600);
+         setcookie("site_login", $login, time() + 3600);
+
+         //setcookie("site_hash", md5($dbPass));  // удаляются в момент закрытия браузера
+         //setcookie("site_login", $login);
+
+         // запомнить пользователя на неделю
+        //setcookie("site_hash", md5($dbPass), time() + 3600*24*7);
+        //setcookie("site_login", $login, time() + 3600*24*7);
+
     }
-     */
 
 }

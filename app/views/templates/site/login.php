@@ -16,6 +16,7 @@
     </header>
     <div class="contacts-form-wrapper">
         <form name="login" action="?loginExecute/execute" onsubmit="return validateLoginForm()" method="post">
+            <div class="errorMessage"><?=$errorNote?></div>
             <div><input type="text" name="login" size="50" id="userLogin"
                         placeholder="Login*" autofocus onfocus="return clearLoginField()"></div>
             <div id="loginError" class="errorMessage"></div>

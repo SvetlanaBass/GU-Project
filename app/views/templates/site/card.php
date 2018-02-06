@@ -11,9 +11,17 @@
 
             </div>
             <div class="content__right">
-                <a class="cart" href="#"></a>
-                <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
-                <a class="btn" href="#">Login</a>
+                <?php
+                    if(isset($_COOKIE['site_hash']) && isset($_COOKIE['site_login'])){
+                        echo '<a class="cart" href="#"></a>
+                              <a class="btn" href="#">' . $_COOKIE['site_login'] . '</a>
+                              <a class="btn" href="?logout/logout">Log out</a>';
+                    } else {
+                        echo '<a class="cart" href="#"></a>
+                              <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
+                              <a class="btn" href="?login/RenderLoginPage">Login</a>';
+                    }
+                ?>
             </div>
         </div>
     </header>
@@ -67,14 +75,3 @@
         <div class="content feturedItems1">
 
         </div>
-
-
-
-<!--<a class="btn" href="../cart/cart?id=--><?//=$product->id_product?><!--">Корзина</a><br><br>-->
-<!--<h3>Карточка товара</h3>-->
-<!--<p>ID товара: --><?//=$product->id_product?><!--</p>-->
-<!--<h1>--><?//=$product->product_name?><!--</h1>-->
-<!--<h2>Цена товара: --><?//=$product->product_price?><!-- $</h2>-->
-<!--<a class="btn" href="../delete/delete?id=--><?//=$product->id_product?><!--">Удалить товар из базы данных</a>-->
-<!--<a class="btn" href="../addToCart/addToCart?id=--><?//=$product->id_product?><!--">Добавить в корзину</a><br><br>-->
-<!--<a href="../catalog/catalog">Вернуться в каталог</a><br><br>-->
