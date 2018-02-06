@@ -11,25 +11,20 @@ class LoginExecuteController extends Controller
         $entity->login = $login;
 
         $password = md5($_POST['password']); // получили защищенный пароль
-        $entity->password = $password;
 
         // достаем пользователя из базы данных по логину
-        // и проверяем соответствие паролей пользователя и в базе данных
-        if ($entity->getUser($entity) === false){    // переход в app\models\DataEntity.php
+        $dbUser = $entity->getUser($entity);   // переход в app\models\DataEntity.php
 
+        // и проверяем соответствие логина и паролей пользователя и в базе данных
+        if ($dbUser === false){
+            echo "Нет такого пользователя";
+        } else if ($dbUser->password !== $password){
+            echo "Неправильный пароль";
+        } else {
+            $this->proceedLogin($dbUser->login, $dbUser->password);
+            echo $this->render("authorizationMain", []);
         }
-
-
-
-
-
-        // если пароли совпадают, вызываем функцию proceedLogin($login, $dbPass)
-
-        // рендерим главную страницу с данными пользователя
     }
-
-
-
 
     // описываем функцию proceedLogin($login, $dbPass)
     /*

@@ -37,6 +37,6 @@ abstract class DataEntity
 
     public function getUser($entity){
         $getEntity = new UserRepository();  // переход в app\models\repositories\Repository.php
-        $getEntity->getOneUser($entity);
+        return $getEntity->getOneUser($entity);
     }
 }
