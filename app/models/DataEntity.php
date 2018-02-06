@@ -17,12 +17,6 @@ abstract class DataEntity
         $saveEntity->save($entity);
     }
 
-    public function addToCart($entity)
-    {
-        $addToCartEntity = new CartRepository();
-        $addToCartEntity->addToCart($entity);
-    }
-
     public function deleteFromCart($entity)
     {
         $deleteFromCartEntity = new CartRepository();

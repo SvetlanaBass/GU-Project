@@ -97,11 +97,11 @@ abstract class Repository
         }
     }
 
-    public function addToCart($entity)
+    public function addToCart($product, $user)
     {
         $tableName = $this->getTableName();
-        $params = [':id' => $entity->id_product, ':quantity' => 1];
-        $sql = "INSERT INTO {$tableName} (id_product, quantity) VALUES (:id, :quantity)";
+        $params = [':id' => $product->id_product, ':quantity' => 1, ':id_user' => $user->id_user];
+        $sql = "INSERT INTO {$tableName} (id_product, quantity, id_user) VALUES (:id, :quantity, :id_user)";
         static::getDb()->execute($sql, $params);
     }
 

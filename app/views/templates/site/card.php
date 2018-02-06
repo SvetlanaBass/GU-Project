@@ -57,22 +57,12 @@
         </div>
         <h5>$ <?=$product->product_price?></h5>
         <div class="filter-titles">
-            <h4>CHOOSE COLOR</h4>
-            <h4>CHOOSE SIZE</h4>
             <h4>QUANTITY</h4>
         </div>
         <div class="filters">
-            <div class="filter-color">
-                <span class="color"></span>
-                <span class="color-title">Red</span>
-                <i class="icon-down-open"></i>
-            </div>
-            <div class="filter-sise">
-                XXL
-                <i class="icon-down-open"></i>
-            </div>
             <input class="filter-qty" type="text" placeholder="2">
         </div>
-        <a href="?addToCart/addToCart?id=<?=$product->id_product?>" class="addtobasket">Add to Cart</a>
+        <p class="addtobasket" onclick="refreshCart()">Add to Cart</p>
+<!--        <a href="?addToCart/addToCart?id=--><?//=$product->id_product?><!--" class="addtobasket" onclick="refreshCart()">Add to Cart</a>-->
     </section>
 </div>

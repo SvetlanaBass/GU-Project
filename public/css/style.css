@@ -548,15 +548,16 @@ nav > ul {
     text-align: center;
     display: inline-block;
     width: 115px;
-    margin: 10px 62px 10px 11px;
+    margin: 10px 0;
 }
 .filters {
     display: flex;
     justify-content: center;
     height: 63px;
 }
-.filters div, .filters input {
+.filters .filter-qty {
     width: 144px;
+    text-align: center;
     height: 35px;
     border: 1px solid #eaeaea;
     background-color: #fff;
@@ -564,31 +565,16 @@ nav > ul {
     color: #bcbcbc;
     font-size: 13px;
     line-height: 24px;
-    padding: 5px 5px 5px 15px;
+    padding: 5px 10px;
     box-sizing: border-box;
-    margin: 0 26px 0 27px;
+    margin: 0 auto;
     outline: none;
-}
-.filters div i, .filters input i {
-    padding-left: 77px;
 }
 .filters input[placeholder] {
     font-family: "Lato-Regular", sans-serif;
     font-size: 14px;
     line-height: 24px;
     color: #bcbcbc;
-}
-.filters .filter-color i {
-    padding-left: 58px;
-}
-.color-title {
-    padding-left: 6px;
-}
-.color {
-    width: 12px;
-    height: 12px;
-    background-color: #ef5b70;
-    display: inline-block;
 }
 .addtobasket {
     text-decoration: none;

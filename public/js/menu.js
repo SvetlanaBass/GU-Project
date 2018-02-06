@@ -40,7 +40,7 @@ class AjaxRequest
             if (this.status !== 200) {
                 console.log('Error', xhr2.status, xhr2.statusText)
             } else {
-                console.log('Ok!', xhr2.statusText, xhr2.responseText);
+                //console.log('Ok!', xhr2.statusText, xhr2.responseText);
                 let items2 = JSON.parse(xhr2.responseText);
                 let menuItems = Transform.transformMenu(items2, items2);
                 let menu = new Menu('', '', '', 'menu', menuItems);

@@ -21,5 +21,6 @@
         </div>
     </footer>
     <script src="js/slider.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>

@@ -52,14 +52,19 @@ abstract class Controller
     // т.к. TemplateRenderer реализует интерфейс IRenderer
     // render() - метод TemplateRenderer
 
+    public function getUserEntity(){
+        $entity = (new User());
+        $login = $_COOKIE['site_login'];
+        $entity->login = $login;
+
+        // достаем пользователя из базы данных по логину
+        return $entity->getUser($entity);   // переход в app\models\DataEntity.php
+    }
+
+
     public function countUserGoods(){
         if (isset($_COOKIE['site_login'])){
-            $entity = (new User());
-            $login = $_COOKIE['site_login'];
-            $entity->login = $login;
-
-            // достаем пользователя из базы данных по логину
-            $dbUser = $entity->getUser($entity);   // переход в app\models\DataEntity.php
+            $dbUser = $this->getUserEntity();
 
             // достаем список товаров пользователя из корзины в БД
             $userCart = (new CartRepository())->getUserCart($dbUser->id_user);
