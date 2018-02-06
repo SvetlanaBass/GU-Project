@@ -588,6 +588,13 @@ nav > ul {
     line-height: 24px;
     color: #bcbcbc;
 }
+.loginMessage {
+    display: none;
+    text-align: center;
+    color: red;
+    font-family: "Lato-Regular", sans-serif;
+    font-size: 18px;
+}
 .addtobasket {
     text-decoration: none;
     display: block;
