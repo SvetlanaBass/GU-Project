@@ -1,6 +1,5 @@
 <?php
 namespace app\models;
-use app\services\Db;
 use app\base\App;
 abstract class Repository
 {
@@ -28,6 +27,12 @@ abstract class Repository
     public function getCart()
     {
         $sql = "SELECT * FROM cart, products WHERE cart.id_product = products.id_product";
+        return static::getDb()->queryAll($sql, []);
+    }
+
+    public function getUserCart($userID)
+    {
+        $sql = "SELECT * FROM cart WHERE id_user = {$userID}";
         return static::getDb()->queryAll($sql, []);
     }
 

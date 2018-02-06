@@ -8,6 +8,10 @@ class ProductController extends Controller
     {
         $id = (new Request())->get('product/card?id');
         $product = (new ProductRepository())->getOne($id);
-        echo $this->render("card", ['product' => $product]);
+
+        $goodsInCart = $this->countUserGoods();
+
+        echo $this->render("card", ['product' => $product,
+            'goodsInCart' => $goodsInCart]);
     }
 }

@@ -44,5 +44,4 @@ class LoginExecuteController extends Controller
         //setcookie("site_login", $login, time() + 3600*24*7);
 
     }
-
 }

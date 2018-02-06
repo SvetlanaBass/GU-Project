@@ -1,6 +1,9 @@
 <?php
 namespace app\controllers;
 use app\interfaces\IRenderer;
+use app\models\User;
+use app\models\repositories\CartRepository;
+
 abstract class Controller
 {
     private $action;
@@ -48,4 +51,25 @@ abstract class Controller
     // renderer - создается new app\services\renderers\TemplateRenderer
     // т.к. TemplateRenderer реализует интерфейс IRenderer
     // render() - метод TemplateRenderer
+
+    public function countUserGoods(){
+        if (isset($_COOKIE['site_login'])){
+            $entity = (new User());
+            $login = $_COOKIE['site_login'];
+            $entity->login = $login;
+
+            // достаем пользователя из базы данных по логину
+            $dbUser = $entity->getUser($entity);   // переход в app\models\DataEntity.php
+
+            // достаем список товаров пользователя из корзины в БД
+            $userCart = (new CartRepository())->getUserCart($dbUser->id_user);
+
+            // подсчитываем количество товаров
+            $goodsInCart = count($userCart);
+
+        } else {
+            $goodsInCart = 0;
+        }
+        return $goodsInCart;
+    }
 }

@@ -12,15 +12,19 @@
             </div>
             <div class="content__right">
                 <?php
-                    if(isset($_COOKIE['site_hash']) && isset($_COOKIE['site_login'])){
-                        echo '<a class="cart" href="#"></a>
-                              <a class="btn" href="#">' . $_COOKIE['site_login'] . '</a>
-                              <a class="btn" href="?logout/logout">Log out</a>';
-                    } else {
-                        echo '<a class="cart" href="#"></a>
-                                  <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
-                                  <a class="btn" href="?login/RenderLoginPage">Login</a>';
-                    }
+                if(isset($_COOKIE['site_login'])){
+                    echo '<a class="cart" href="#">
+                            <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
+                          </a>
+                          <a class="btn" href="#">' . $_COOKIE['site_login'] . '</a>
+                          <a class="btn" href="?logout/logout">Log out</a>';
+                } else {
+                    echo '<a class="cart" href="#">
+                            <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
+                          </a>
+                          <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
+                          <a class="btn" href="?login/RenderLoginPage">Login</a>';
+                }
                 ?>
             </div>
         </div>

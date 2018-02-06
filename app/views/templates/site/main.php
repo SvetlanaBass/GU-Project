@@ -2,7 +2,7 @@
     <header class="header">
         <div class="content">
             <div class="content__left">
-                <a class="logo" href="#">
+                <a class="logo" href="/">
                     <span class="logo__title">BRAN<span>D</span></span>
                 </a>
             </div>
@@ -11,12 +11,16 @@
             </div>
             <div class="content__right">
                 <?php
-                    if(isset($_COOKIE['site_hash']) && isset($_COOKIE['site_login'])){
-                        echo '<a class="cart" href="#"></a>
+                    if(isset($_COOKIE['site_login'])){
+                        echo '<a class="cart" href="#">
+                                <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
+                              </a>
                               <a class="btn" href="#">' . $_COOKIE['site_login'] . '</a>
                               <a class="btn" href="?logout/logout">Log out</a>';
                     } else {
-                        echo '<a class="cart" href="#"></a>
+                        echo '<a class="cart" href="#">
+                                <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
+                              </a>
                               <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
                               <a class="btn" href="?login/RenderLoginPage">Login</a>';
                     }

@@ -7,6 +7,8 @@ class CatalogController extends Controller
     public function actionCatalog()
     {
         $products = (new ProductRepository())->getAll();
-        echo $this->render("catalog", ['products' => $products]);
+        $goodsInCart = $this->countUserGoods();
+        echo $this->render("catalog", ['products' => $products,
+            'goodsInCart' => $goodsInCart]);
     }
 }
