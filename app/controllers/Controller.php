@@ -61,7 +61,6 @@ abstract class Controller
         return $entity->getUser($entity);   // переход в app\models\DataEntity.php
     }
 
-
     public function countUserGoods(){
         if (isset($_COOKIE['site_login'])){
             $dbUser = $this->getUserEntity();

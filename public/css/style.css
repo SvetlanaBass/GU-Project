@@ -133,6 +133,18 @@
 .btn:active {
     background-color: #ff495d;
 }
+.btn__name {
+    display: inline-block;
+    height: 38px;
+    font-family: "Lato-Regular", sans-serif;
+    font-size: 27px;
+    line-height: 38px;
+    text-align: center;
+    margin-left: 4px;
+    padding: 0 25px;
+    background-color: #fff;
+    color: #f16d7f;
+}
 /* HEADER END */
 
 /* NAV */

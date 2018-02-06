@@ -16,7 +16,7 @@
                     echo '<a class="cart" href="#">
                             <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
                           </a>
-                          <a class="btn" href="#">' . $_COOKIE['site_login'] . '</a>
+                          <span class="btn__name">' . $_COOKIE['site_login'] . '</span>
                           <a class="btn" href="?logout/logout">Log out</a>';
                 } else {
                     echo '<a class="cart" href="#">
