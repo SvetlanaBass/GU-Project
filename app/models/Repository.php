@@ -52,6 +52,12 @@ abstract class Repository
         static::getDb()->execute($sql, [':id' => $entity->$primaryKey]);
     }
 
+    public function deleteFromCart(DataEntity $entity){
+        $tableName = $this->getTableName();
+        $sql = "DELETE FROM {$tableName} WHERE id_product = {$entity->id_product} AND id_user = {$entity->id_user}";
+        static::getDb()->execute($sql, []);
+    }
+
     private function insert(DataEntity $entity)
     {
         $params = [];

@@ -60,7 +60,7 @@
                                 <td class="td">'.$cart[$key]['quantity'].'</td>
                                 <td class="td">$'.$cart[$key]['product_price']*$cart[$key]['quantity'].'</td>
                                 <td class="td">
-                                    <i class="icon-cancel-circled" onclick="deleteFromCart()"></i>
+                                    <i class="icon-cancel-circled" onclick="deleteFromCart('.$cart[$key]['id_product'].', '.$cart[$key]['id_user'].', this)"></i>                                    
                                 </td>
                               </tr>';
                     }
@@ -81,7 +81,7 @@
                     ?>
                 </span></h2>
             <div class="line item__line"></div>
-            <a href="checkout.html" class="flex__btn item3__btn btn--red">PROCEED TO CHECKOUT</a>
+            <a href="#" class="flex__btn item3__btn btn--red">PROCEED TO CHECKOUT</a>
         </div>
     </div>
 </div>
@@ -90,3 +90,4 @@
 
 
 <td><a href="../deleteFromCart/deleteFromCart?id=' . $cart[$key]['id'] . '">Удалить</a></td>
+<a href="?deleteFromCart/deleteFromCart&id_product='.$cart[$key]['id_product'].'&id_user='.$cart[$key]['id_user'].'">Удалить</a>

@@ -6,10 +6,11 @@ class DeleteFromCartController extends Controller
 {
     public function actionDeleteFromCart()
     {
-        $id = (new Request())->get('id');
+        $id_product = (new Request())->get('id_product');
+        $id_user = (new Request())->get('id_user');
         $cartEntity = (new Cart());
-        $cartEntity->id = $id;
+        $cartEntity->id_product = $id_product;
+        $cartEntity->id_user = $id_user;
         $cartEntity->deleteFromCart($cartEntity);
-        echo $this->render("success", []);
     }
 }

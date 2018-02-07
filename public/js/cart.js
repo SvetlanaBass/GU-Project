@@ -28,6 +28,18 @@ function add(goodsInCart) {
 
 }
 
-function deleteFromCart() {
-    
+function deleteFromCart(productID, userID, el) {
+    let xhr2 = new XMLHttpRequest();
+    xhr2.open("GET", "?deleteFromCart/deleteFromCart&id_product=" + productID + "&id_user=" + userID, true);
+    xhr2.send();
+    xhr2.onreadystatechange = function () {
+        if (this.readyState !== 4) return;
+        if (this.status !== 200) {
+            console.log('Error', xhr2.status, xhr2.statusText)
+        } else {
+            console.log('Ok!', xhr2.statusText, xhr2.responseText);
+            el.parentNode.parentNode.style.display = "none";
+            $cartDataDiv.innerHTML = +$cartDataDiv.innerHTML - 1;
+        }
+    };
 }

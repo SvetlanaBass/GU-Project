@@ -20,7 +20,7 @@ abstract class DataEntity
     public function deleteFromCart($entity)
     {
         $deleteFromCartEntity = new CartRepository();
-        $deleteFromCartEntity->delete($entity);
+        $deleteFromCartEntity->deleteFromCart($entity);
     }
 
     public function saveUser($entity)

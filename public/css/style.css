@@ -756,6 +756,10 @@ td {
 }
 .icon-cancel-circled {
     cursor: pointer;
+    color: #b5b5b5;
+}
+.icon-cancel-circled:hover {
+    color: #656565;
 }
 .flex {
     display: flex;
