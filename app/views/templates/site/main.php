@@ -12,13 +12,13 @@
             <div class="content__right">
                 <?php
                     if(isset($_COOKIE['site_login'])){
-                        echo '<a class="cart" href="#">
+                        echo '<a class="cart" href="?cart/cart">
                                 <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
                               </a>
                               <span class="btn__name">' . $_COOKIE['site_login'] . '</span>
                               <a class="btn" href="?logout/logout">Log out</a>';
                     } else {
-                        echo '<a class="cart" href="#">
+                        echo '<a class="cart" href="?cart/cart">
                                 <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
                               </a>
                               <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
@@ -76,7 +76,7 @@
         </div>
         <div class="content">
             <a class="linkToCatalog" href="?catalog/catalog">
-                Browse All Product&nbsp;<i class="icon-right"></i>
+                Browse All Products&nbsp;<i class="icon-right"></i>
             </a>
         </div>
     </section>

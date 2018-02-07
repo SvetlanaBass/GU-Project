@@ -27,3 +27,7 @@ function add(goodsInCart) {
     }
 
 }
+
+function deleteFromCart() {
+    
+}

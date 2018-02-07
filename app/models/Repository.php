@@ -24,9 +24,9 @@ abstract class Repository
         return static::getDb()->queryObjectsAll($sqlOne, $maxID, static::getEntityClass());
     }
 
-    public function getCart()
+    public function getCart($user)
     {
-        $sql = "SELECT * FROM cart, products WHERE cart.id_product = products.id_product";
+        $sql = "SELECT * FROM cart, products WHERE cart.id_product = products.id_product AND id_user = {$user->id_user}";
         return static::getDb()->queryAll($sql, []);
     }
 
