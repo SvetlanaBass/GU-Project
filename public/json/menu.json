@@ -1,7 +1,7 @@
 [
-  {"href": "#", "title": "Home", "className": "active-link-menu", "items": ""},
-  {"href": "#", "title": "Man", "className": "", "items": ""},
-  {"href": "#", "title": "Women", "className": "", "items": ""},
+  {"href": "/", "title": "Home", "className": "active-link-menu", "items": ""},
+  {"href": "?men/men", "title": "Men", "className": "", "items": ""},
+  {"href": "?women/women", "title": "Women", "className": "", "items": ""},
   {"href": "#", "title": "Kids", "className": "", "items": ""},
   {"href": "#", "title": "Accessories", "className": "", "items": ""},
   {"href": "#", "title": "Featured", "className": "", "items": ""},

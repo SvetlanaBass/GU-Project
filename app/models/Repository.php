@@ -18,8 +18,8 @@ abstract class Repository
         $tableName = static::getTableName();
         // таблица того объекта, который создан в MainController, т.е. ProductRepository
         // т.е. 'products'
-        $primaryKey = static ::getPrimaryKeyName($tableName); // метод Repository.php
-        $maxID = $this->countObjects($tableName, $primaryKey); // метод Repository.php
+        $primaryKey = static ::getPrimaryKeyName($tableName); // метод Repository.php //'id_product'
+        $maxID = $this->countObjects($tableName, $primaryKey); // метод Repository.php  // '15'
         $sqlOne = "SELECT * FROM {$tableName} WHERE {$primaryKey} = :id";
         return static::getDb()->queryObjectsAll($sqlOne, $maxID, static::getEntityClass());
     }

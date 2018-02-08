@@ -1,4 +1,3 @@
-<?php /** @var \app\models\Product $product */ ?>
 <div class="container">
     <header class="header">
         <div class="content">
@@ -14,16 +13,16 @@
                 <?php
                 if(isset($_COOKIE['site_login'])){
                     echo '<a class="cart" href="?cart/cart">
-                            <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
-                          </a>
-                          <span class="btn__name">' . $_COOKIE['site_login'] . '</span>
-                          <a class="btn" href="?logout/logout">Log out</a>';
+                                <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
+                              </a>
+                              <span class="btn__name">' . $_COOKIE['site_login'] . '</span>
+                              <a class="btn" href="?logout/logout">Log out</a>';
                 } else {
                     echo '<a class="cart" href="?cart/cart">
-                            <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
-                          </a>
-                          <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
-                          <a class="btn" href="?login/RenderLoginPage">Login</a>';
+                                <div class="goods-in-cart content__goods-in-cart">'.$goodsInCart.'</div>
+                              </a>
+                              <a class="btn" href="?register/RenderRegisterPage">Create Account</a>
+                              <a class="btn" href="?login/RenderLoginPage">Login</a>';
                 }
                 ?>
             </div>
@@ -32,20 +31,21 @@
     <nav id="menu"></nav>
     <div class="new-arrivals">
         <div class="content">
-            <h1>All Products</h1>
-            <h3>HOME &#47; <span> All Products</span></h3>
+            <h1>women</h1>
+            <h3>HOME &#47; <span> women</span></h3>
         </div>
     </div>
     <div class="content feturedItems__gallery">
         <?php
         foreach ($products as $product){
-            echo '<a href="?product/card?id='.$product->id_product.'" class="gallery-item">
+            if($product->gender === "women"){
+                echo '<a href="?product/card?id='.$product->id_product.'" class="gallery-item">
                         <img src="'.$product->product_img.'" alt="goods">
                         <p class="good-title">'.$product->product_name.'</p>
                         <p class="good-price">$'.$product->product_price.'</p>
                   </a>';
+            }
         }
         ?>
     </div>
 </div>
-

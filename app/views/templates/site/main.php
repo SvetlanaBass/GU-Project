@@ -80,12 +80,8 @@
             </a>
         </div>
     </section>
-    <section class="content discounts">
-        <div class="discount-header">
-            <h2>30% <span>OFFER</span></h2>
-            <h3>FOR WOMEN</h3>
-        </div>
-        <div class="discount-features">
+    <section class="features">
+        <div class="content">
             <article class="discount-features__item1">
                 <h3>Free Delivery</h3>
                 <p>
