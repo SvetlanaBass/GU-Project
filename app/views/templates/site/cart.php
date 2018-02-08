@@ -60,7 +60,7 @@
                                 <td class="td">'.$cart[$key]['quantity'].'</td>
                                 <td class="td">$'.$cart[$key]['product_price']*$cart[$key]['quantity'].'</td>
                                 <td class="td">
-                                    <i class="icon-cancel-circled" onclick="deleteFromCart('.$cart[$key]['id_product'].', '.$cart[$key]['id_user'].', this)"></i>                                    
+                                    <i class="icon-cancel-circled" onclick="deleteFromCart('.$cart[$key]['id_product'].', '.$cart[$key]['id_user'].', '.$cart[$key]['quantity'].', '.$cart[$key]['product_price'].', this)"></i>                                    
                                 </td>
                               </tr>';
                     }
@@ -71,11 +71,11 @@
     <div class="content flex">
         <a class="flex__btn" href="/">CONTINUE SHOPPING</a>
         <div class="itemN flex__item flex__item--card item3">
-            <h2 class="h2 item__h2 item3__h2">GRAND TOTAL <span>
+            <h2 class="h2 item__h2 item3__h2">GRAND TOTAL <span class="total-amount">
                     <?php
                     $totalSum = 0;
                         foreach ($cart as $key => $value) {
-                            $totalSum = $totalSum + $cart[$key]['product_price'];
+                            $totalSum = $totalSum + $cart[$key]['product_price'] * $cart[$key]['quantity'];
                         }
                         echo '$' . $totalSum;
                     ?>
@@ -85,9 +85,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-<td><a href="../deleteFromCart/deleteFromCart?id=' . $cart[$key]['id'] . '">Удалить</a></td>
-<a href="?deleteFromCart/deleteFromCart&id_product='.$cart[$key]['id_product'].'&id_user='.$cart[$key]['id_user'].'">Удалить</a>

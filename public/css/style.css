@@ -611,6 +611,7 @@ nav > ul {
     height: 55px;
     margin: 0 auto;
     padding: 18px 0 0 45px;
+    cursor: pointer;
 }
 .addtobasket:hover {
     color: #fff;

@@ -60,10 +60,9 @@
             <h4>QUANTITY</h4>
         </div>
         <div class="filters">
-            <input class="filter-qty" type="text" placeholder="2">
+            <input class="filter-qty" type="text" placeholder="1">
         </div>
         <p class="loginMessage">Please log into your account using the link in the upper right corner.</p>
-        <p class="addtobasket" onclick="refreshCart()">Add to Cart</p>
-<!--        <a href="?addToCart/addToCart?id=--><?//=$product->id_product?><!--" class="addtobasket" onclick="refreshCart()">Add to Cart</a>-->
+        <p class="addtobasket" onclick="addToCart()">Add to Cart</p>
     </section>
 </div>

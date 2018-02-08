@@ -66,11 +66,12 @@ abstract class Controller
             $dbUser = $this->getUserEntity();
 
             // достаем список товаров пользователя из корзины в БД
-            $userCart = (new CartRepository())->getUserCart($dbUser->id_user);
+            //$userCart = (new CartRepository())->getUserCart($dbUser->id_user);
 
             // подсчитываем количество товаров
-            $goodsInCart = count($userCart);
-
+            //$goodsInCart = count($userCart);
+            $goodsInCartArr = (new CartRepository())->countUserGoods($dbUser->id_user);
+            $goodsInCart = (int)$goodsInCartArr['total_goods'];
         } else {
             $goodsInCart = 0;
         }

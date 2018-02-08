@@ -5,7 +5,7 @@ use app\models\repositories\CartRepository;
 class CartController extends Controller
 {
     public function actionCart(){
-        $goodsInCart = $this->countUserGoods(); // подсчитываем количество товаров для значка корзины
+        $goodsInCart = $this->countUserGoods(); // подсчитываем количество товаров для значка корзины (получаем массив)
 
         $user = $this->getUserEntity(); // находим пользователя для ID
 

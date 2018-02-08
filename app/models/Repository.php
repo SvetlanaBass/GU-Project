@@ -36,6 +36,11 @@ abstract class Repository
         return static::getDb()->queryAll($sql, []);
     }
 
+    public function countUserGoods($userID){
+        $sql = "SELECT SUM(quantity) AS `total_goods` FROM `cart` WHERE `id_user` = {$userID}";
+        return static::getDb()->queryOne($sql, []);
+    }
+
     public function countObjects($tableName, $primaryKey)
     {
         $sql = "SELECT MAX({$primaryKey}) FROM {$tableName}";
@@ -54,7 +59,10 @@ abstract class Repository
 
     public function deleteFromCart(DataEntity $entity){
         $tableName = $this->getTableName();
-        $sql = "DELETE FROM {$tableName} WHERE id_product = {$entity->id_product} AND id_user = {$entity->id_user}";
+        $sql = "DELETE FROM `{$tableName}` 
+                WHERE `id_product` IN ('{$entity->id_product}') 
+                AND `id_user` IN ('{$entity->id_user}') 
+                AND `quantity` IN ('{$entity->quantity}')";
         static::getDb()->execute($sql, []);
     }
 
@@ -103,10 +111,10 @@ abstract class Repository
         }
     }
 
-    public function addToCart($product, $user)
+    public function addToCart($product, $user, $quantity)
     {
         $tableName = $this->getTableName();
-        $params = [':id' => $product->id_product, ':quantity' => 1, ':id_user' => $user->id_user];
+        $params = [':id' => $product->id_product, ':quantity' => $quantity, ':id_user' => $user->id_user];
         $sql = "INSERT INTO {$tableName} (id_product, quantity, id_user) VALUES (:id, :quantity, :id_user)";
         static::getDb()->execute($sql, $params);
     }

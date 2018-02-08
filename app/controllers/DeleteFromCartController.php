@@ -8,9 +8,11 @@ class DeleteFromCartController extends Controller
     {
         $id_product = (new Request())->get('id_product');
         $id_user = (new Request())->get('id_user');
+        $quantity = (new Request())->get('quantity');
         $cartEntity = (new Cart());
         $cartEntity->id_product = $id_product;
         $cartEntity->id_user = $id_user;
+        $cartEntity->quantity = $quantity;
         $cartEntity->deleteFromCart($cartEntity);
     }
 }
